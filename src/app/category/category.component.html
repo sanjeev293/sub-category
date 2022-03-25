@@ -1,0 +1,47 @@
+<div class="container py-5">
+  <div class="items">
+    <h1>filter out your category </h1>
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Favorite food</mat-label>
+      <input matInput placeholder="Ex. Pizza" value="Sushi">
+    </mat-form-field>
+    <br>
+    
+  </form>
+  <br>
+
+  <!-- sub category  -->
+
+  <h4>Basic mat-select</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Favorite food</mat-label>
+  <mat-select (selectionChange)="updateFood($event.value)">
+    <mat-option *ngFor="let food of choice" [value]="food">
+      {{food}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<!-- sub-sub-category -->
+<br>
+<br>
+<mat-form-field appearance="fill">
+  <mat-label>Favorite food</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let p of subCategory" [value]="p">
+      {{p}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<!-- description -->
+
+<mat-form-field class="example-full-width" appearance="fill">
+  <mat-label>Leave a comment</mat-label>
+  <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+</mat-form-field>
+<br>
+
+<button type="button" class="btn btn-primary">submit</button>
+</div>
+  </div>
+  
